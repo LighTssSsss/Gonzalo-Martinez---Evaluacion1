@@ -8,8 +8,9 @@ public class SpawnEnemigos : MonoBehaviour
     public GameObject objeto;
    // public int numero;
     public Transform ubicacion;
+    public int distancia = 5;
     public GameObject player;
-    [SerializeField] private FMODUnity.StudioEventEmitter spawn;
+
 
     private void Start()
     {
@@ -19,11 +20,11 @@ public class SpawnEnemigos : MonoBehaviour
 
     private void Update()
     {
-        if(player.transform.position.x >= 5 )
+        if(player.transform.position.x > distancia )
         {
             objeto = lista[Random.Range(0, lista.Count)];
-            spawn.Play();
-            Instantiate(objeto, ubicacion.position, ubicacion.rotation);
+            distancia += 10;
+            Instantiate(objeto, ubicacion.position + objeto.transform.position, ubicacion.rotation);
         }
         
     }

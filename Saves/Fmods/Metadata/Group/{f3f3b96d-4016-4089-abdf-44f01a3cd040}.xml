@@ -28,6 +28,7 @@
 	<object class="MixerBusEffectChain" id="{81cd8efe-ded7-4191-b069-0627d14840c1}">
 		<relationship name="effects">
 			<destination>{0afe417f-8d01-4bdc-919e-fd609624840b}</destination>
+			<destination>{59f780cc-fa18-4897-b3a6-1456678c9e76}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{83fc9a2f-b040-4441-b870-4a2d666f0a35}" />
@@ -41,6 +42,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{0afe417f-8d01-4bdc-919e-fd609624840b}" />
+	<object class="SFXReverbEffect" id="{59f780cc-fa18-4897-b3a6-1456678c9e76}">
+		<relationship name="automators">
+			<destination>{693af0bb-a4e8-4f6e-8068-7682c05fbc7d}</destination>
+		</relationship>
+	</object>
 	<object class="AutomationPoint" id="{a69f45c2-280f-4424-a7b8-aebc0584f95f}">
 		<property name="position">
 			<value>0</value>
@@ -55,6 +61,39 @@
 		</property>
 		<property name="value">
 			<value>-22.8571472</value>
+		</property>
+	</object>
+	<object class="Automator" id="{693af0bb-a4e8-4f6e-8068-7682c05fbc7d}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>wetLevel</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{01b8dc0f-01dd-439e-81fd-1d6d818f644f}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{01b8dc0f-01dd-439e-81fd-1d6d818f644f}">
+		<relationship name="parameter">
+			<destination>{392f9ce9-5630-43c0-a8b8-b68a610c567f}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{7325786e-1505-473d-a0e1-cc829bdd04bd}</destination>
+			<destination>{ec10260f-4258-4ca8-b41a-b080642e4062}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{7325786e-1505-473d-a0e1-cc829bdd04bd}">
+		<property name="position">
+			<value>0.0014124293785310734</value>
+		</property>
+		<property name="value">
+			<value>-6.00000381</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{ec10260f-4258-4ca8-b41a-b080642e4062}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>10</value>
 		</property>
 	</object>
 </objects>

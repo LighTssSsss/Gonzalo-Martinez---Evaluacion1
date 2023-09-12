@@ -28,7 +28,7 @@ public class PausaController : MonoBehaviour
     {
         if (es == true && estoy == false)
         {
-            Debug.Log("Aparece");
+           // Debug.Log("Aparece");
             pausa.SetActive(true);
             pausaSonidoReducido.TriggerParameters();
             estoy = true;
@@ -36,7 +36,7 @@ public class PausaController : MonoBehaviour
 
         else if(estoy == true)
         {
-            Debug.Log("Desaparece");
+           // Debug.Log("Desaparece");
             pausa.SetActive(false);
             pausaSonidoNormal.TriggerParameters();
             estoy = false;

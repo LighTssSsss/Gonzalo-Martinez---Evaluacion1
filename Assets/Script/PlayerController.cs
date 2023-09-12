@@ -88,12 +88,12 @@ public class PlayerController : MonoBehaviour
         {
             puedoSaltar = true;
             salto = false;
-            Debug.Log("Puede Saltar");
+            //Debug.Log("Puede Saltar");
         }
 
         if(collision.gameObject.tag == "Piso"  && salto == true)
         {
-            Debug.Log("Sonido Piso");
+           // Debug.Log("Sonido Piso");
             tocaSuelo.Play();
             puedoSaltar = true;
             salto = false;
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             puedoSaltar = false;
             salto = true;
-            Debug.Log("salto");
+            //Debug.Log("salto");
         }
     }
 

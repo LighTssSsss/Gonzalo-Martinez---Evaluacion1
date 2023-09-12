@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3087531e-d8c0-4565-a38d-e9bb3a7efc17}">
+		<property name="name">
+			<value>Cueva</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6b81dee7-30a1-46ab-b02f-30cf8a938424}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{392f9ce9-5630-43c0-a8b8-b68a610c567f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{392f9ce9-5630-43c0-a8b8-b68a610c567f}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.5</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
