@@ -20,11 +20,14 @@ public class SpawnEnemigos : MonoBehaviour
 
     private void Update()
     {
-        if(player.transform.position.x > distancia )
+        if(player.transform.position.x >= distancia )
         {
             objeto = lista[Random.Range(0, lista.Count)];
             distancia += 10;
+            transform.position = new Vector3(transform.position.x + 10, 0, 0);
+
             Instantiate(objeto, ubicacion.position + objeto.transform.position, ubicacion.rotation);
+            // gameObject.SetActive(false);
         }
         
     }
