@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action<Vector2> OnMovement;
     public static event System.Action<bool> OnJump;
     public static event System.Action<bool> OnEscape;
-
+  
     [SerializeField] private PlayerInput playerInput;
 
     private void OnEnable()
@@ -34,8 +34,12 @@ public class InputManager : MonoBehaviour
                 break;
 
             case "Salto":
-                bool salto =  context.ReadValueAsButton();
-                OnJump?.Invoke(salto);
+                bool salto = context.ReadValue<bool>();
+                if (context.started)OnJump?.Invoke(true);
+                break;
+
+            case "Pausa":              
+                if (context.started) OnEscape?.Invoke(true);
                 break;
         }
     }

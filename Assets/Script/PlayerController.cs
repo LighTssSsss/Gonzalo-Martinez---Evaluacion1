@@ -5,19 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
+    private bool jump;
     [SerializeField] private float speed;
     [SerializeField] private float fuerzaSalto;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private bool puedoSaltar;
-    
+    public GameObject pausa;
     private void OnEnable()
     {
         InputManager.OnMovement += HandleMovement;
+        InputManager.OnJump += Jump;
+ 
     }
 
     private void OnDisable()
     {
         InputManager.OnMovement -= HandleMovement;
+        InputManager.OnJump -= Jump;
+ 
     }
 
 
@@ -25,13 +30,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pausa.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 velocity = new Vector2(input.x,0);
-        rb.MovePosition(rb.position +(velocity * Time.fixedDeltaTime * speed));
+        rb.position += ((velocity * Time.fixedDeltaTime * speed));
     }
 
     private void HandleMovement(Vector2 move)
@@ -39,9 +45,11 @@ public class PlayerController : MonoBehaviour
         input = move;
     }
 
-    private void Jump()
-    {
-        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+    private void Jump(bool j)
+    {       
+        rb.AddForce(Vector2.up * fuerzaSalto);
         Debug.Log("salto");
     }
+
+   
 }
