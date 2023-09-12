@@ -597,6 +597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 855101363}
+  - component: {fileID: 855101364}
   m_Layer: 0
   m_Name: SpawnEnemigosSuelo
   m_TagString: Untagged
@@ -619,6 +620,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855101364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855101362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b644288411d6cad44ae07ed61fc0e88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lista:
+  - {fileID: 6420637199377201813, guid: 25835302707b22a4da965559b164439e, type: 3}
+  - {fileID: 7941327631709268557, guid: af2a8c034ba45094299f1def7c6617de, type: 3}
+  objeto: {fileID: 0}
+  numero: 0
+  ubicacion: {fileID: 855101363}
+  player: {fileID: 547955452}
 --- !u!1 &1104285357
 GameObject:
   m_ObjectHideFlags: 0
