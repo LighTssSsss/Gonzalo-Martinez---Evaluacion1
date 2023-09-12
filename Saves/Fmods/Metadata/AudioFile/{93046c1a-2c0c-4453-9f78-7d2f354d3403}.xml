@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93046c1a-2c0c-4453-9f78-7d2f354d3403}">
+		<property name="assetPath">
+			<value>Collide 4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.709342403628118</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5d7e76ff-f7fd-4bfa-94aa-7d0fe979ff4a}</destination>
+		</relationship>
+	</object>
+</objects>

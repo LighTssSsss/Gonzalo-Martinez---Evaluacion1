@@ -6,6 +6,8 @@ public class PausaController : MonoBehaviour
 {
     public GameObject pausa;
     public bool estoy;
+    [SerializeField] private FMODUnity.StudioGlobalParameterTrigger pausaSonidoReducido;
+    [SerializeField] private FMODUnity.StudioGlobalParameterTrigger pausaSonidoNormal;
 
     private void OnEnable()
     {
@@ -28,6 +30,7 @@ public class PausaController : MonoBehaviour
         {
             Debug.Log("Aparece");
             pausa.SetActive(true);
+            pausaSonidoReducido.TriggerParameters();
             estoy = true;
         }
 
@@ -35,6 +38,7 @@ public class PausaController : MonoBehaviour
         {
             Debug.Log("Desaparece");
             pausa.SetActive(false);
+            pausaSonidoNormal.TriggerParameters();
             estoy = false;
         }
 

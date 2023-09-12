@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{cdc7c32f-c4f1-4914-9ad6-243d3f5813e1}">
+		<property name="name">
+			<value>MixerPausa</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6b81dee7-30a1-46ab-b02f-30cf8a938424}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{2b3bee0d-9b10-4f3d-9bcd-ccd7294755b5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{2b3bee0d-9b10-4f3d-9bcd-ccd7294755b5}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

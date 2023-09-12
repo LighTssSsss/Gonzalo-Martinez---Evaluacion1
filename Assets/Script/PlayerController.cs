@@ -10,7 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fuerzaSalto;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private bool puedoSaltar;
-    public GameObject pausa;
+    [SerializeField] private bool salto;
+    [SerializeField] private bool ejecuta;
+
+    [SerializeField] private FMODUnity.StudioEventEmitter pasos;
+    [SerializeField] private FMODUnity.StudioEventEmitter saltos;
+    [SerializeField] private FMODUnity.StudioEventEmitter tocaSuelo;
+    
     private void OnEnable()
     {
         InputManager.OnMovement += HandleMovement;
@@ -29,8 +35,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      
         rb = GetComponent<Rigidbody2D>();
-        pausa.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -38,18 +45,76 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity = new Vector2(input.x,0);
         rb.position += ((velocity * Time.fixedDeltaTime * speed));
+
+       
     }
 
     private void HandleMovement(Vector2 move)
     {
         input = move;
+       
+        
+        if(move.magnitude != 0 && !ejecuta)
+        {
+            ejecuta = true;
+            pasos.Play();
+
+        }
+
+        if(move.magnitude == 0 && ejecuta)
+        {
+            pasos.Stop();
+            ejecuta = false;
+       
+        }
+      
     }
 
     private void Jump(bool j)
     {       
-        rb.AddForce(Vector2.up * fuerzaSalto);
-        Debug.Log("salto");
+        if(puedoSaltar == true)
+        {
+            rb.AddForce(Vector2.up * fuerzaSalto);
+            salto = true;
+            saltos.Play();
+            //Debug.Log("salto");
+        }
+        
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Piso" && salto == false)
+        {
+            puedoSaltar = true;
+            salto = false;
+            Debug.Log("Puede Saltar");
+        }
+
+        if(collision.gameObject.tag == "Piso"  && salto == true)
+        {
+            Debug.Log("Sonido Piso");
+            tocaSuelo.Play();
+            puedoSaltar = true;
+            salto = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Piso")
+        {
+            puedoSaltar = false;
+            salto = true;
+            Debug.Log("salto");
+        }
+    }
+
+
 }
+
+
+   
+
+
+

@@ -34,7 +34,6 @@ public class InputManager : MonoBehaviour
                 break;
 
             case "Salto":
-                bool salto = context.ReadValue<bool>();
                 if (context.started)OnJump?.Invoke(true);
                 break;
 
