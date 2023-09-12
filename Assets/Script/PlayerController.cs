@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector2 input;
     [SerializeField] private float speed;
+    [SerializeField] private float fuerzaSalto;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private bool puedoSaltar;
     
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        
+        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
         Debug.Log("salto");
     }
 }
